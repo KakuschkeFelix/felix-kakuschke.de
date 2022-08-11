@@ -20,26 +20,29 @@
     </div>
   </div>
   <div class="content">
-    <div class="page-header">
-      <HeaderSection></HeaderSection>
+    <div class="home-content">
+      <HomeContent></HomeContent>
     </div>
-    <!-- <AbilitiesSection></AbilitiesSection> -->
+    <div class="abilities-content">
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      <br><br><br><br><br><br><br><br><br>
+    </div>
   </div>
 </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import HeaderSection from './components/HeaderSection.vue';
+import HomeContent from '@/components/home/HomeContent.vue';
 import NavBar from './components/NavBar.vue';
-// import AbilitiesSection from './components/AbilitiesSection.vue';
 
 export default defineComponent({
   name: 'App',
   components: {
-    HeaderSection,
     NavBar,
-    // AbilitiesSection,
+    HomeContent,
   },
 });
 </script>
@@ -50,20 +53,15 @@ export default defineComponent({
     position: sticky;
     top: 0;
   }
-  .page-header {
-    position: absolute;
-    left: 30%;
-    top: 20%;
-  }
 }
 .page {  display: grid;
-  grid-template-columns: 1fr 5fr;
+  grid-template-columns: 1fr 9fr;
   grid-template-rows: 1fr;
   gap: 0px 0px;
   grid-auto-flow: row;
   grid-template-areas:
     "sidebar content";
-  width: 100%;
+  width: 99%;
 }
 
 .content { grid-area: content; }
@@ -96,6 +94,10 @@ export default defineComponent({
       }
     }
   }
+  }
+
+  .home-content {
+    margin-top: 10rem;
   }
 
 </style>

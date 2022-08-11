@@ -1,0 +1,151 @@
+<template>
+    <div class="abilities-section">
+        <div class="icons">
+            <div class="icon" v-for="tech in technologies"
+            :key="tech.name"
+            :class="tech.class == 0 ? 'start' :
+             tech.class == 1 ? 'reveal' :
+              tech.class == 2 ? 'end' : ''">
+                <font-awesome-icon :icon="`fa-brands ${tech.iconName}`" /><p>{{ tech.name }}</p>
+            </div>
+            <div class="scrollbar"></div>
+        </div>
+    </div>
+</template>
+<style lang="scss" scoped>
+.icons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+    .icon {
+        transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+        font-size: 8rem;
+        padding: 1rem;
+        p {
+            font-size: 1.5rem;
+            text-align: center;
+            transition: opacity 0.5s ease-out;
+            margin-top: 0;
+        }
+        &.start {
+            transform: scale(0.8);
+            opacity: 0.25;
+            p {
+              opacity: 0;
+            }
+        }
+        &.end {
+          transform: scale(0.8);
+          opacity: 0.25;
+          p {
+            opacity: 0;
+          }
+        }
+        &.reveal {
+          transform: scale(1.2);
+            opacity: 1;
+        }
+    }
+</style>
+<script lang="ts">
+import { defineComponent } from 'vue';
+
+interface Technology {
+  name: string;
+  iconName: string;
+  class: number;
+}
+
+export default defineComponent({
+  data() {
+    return {
+      technologies: [] as Technology[],
+      index: 0,
+    };
+  },
+  methods: {
+    rotateIcons() {
+      const iconsEachTime = 1;
+      setInterval(() => {
+        this.index = this.mod(this.index + iconsEachTime, this.technologies.length);
+        for (let i = 0; i < iconsEachTime; i += 1) {
+          this.technologies[
+            this.mod(this.index - i - iconsEachTime, this.technologies.length)
+          ].class = 0;
+        }
+        for (let i = 0; i < iconsEachTime; i += 1) {
+          this.technologies[
+            this.mod(this.index - i, this.technologies.length)
+          ].class = 1;
+        }
+        for (let i = 1; i <= iconsEachTime; i += 1) {
+          this.technologies[
+            this.mod(this.index + i, this.technologies.length)
+          ].class = 2;
+        }
+      }, 1500);
+    },
+    mod(n: number, m: number) {
+      return ((n % m) + m) % m;
+    },
+  },
+  mounted() {
+    this.rotateIcons();
+    const technames = [
+      {
+        name: 'Angular',
+        iconName: 'fa-angular',
+      },
+      {
+        name: 'VueJS',
+        iconName: 'fa-vuejs',
+      },
+      {
+        name: 'Laravel',
+        iconName: 'fa-laravel',
+      },
+      {
+        name: 'Docker',
+        iconName: 'fa-docker',
+      },
+      {
+        name: 'Python',
+        iconName: 'fa-python',
+      },
+      {
+        name: 'Go/Golang',
+        iconName: 'fa-golang',
+      },
+      {
+        name: 'Node',
+        iconName: 'fa-node-js',
+      },
+      {
+        name: 'CSS',
+        iconName: 'fa-css3',
+      },
+      {
+        name: 'Sass/SCSS',
+        iconName: 'fa-sass',
+      },
+      {
+        name: 'HTML',
+        iconName: 'fa-html5',
+      },
+      {
+        name: 'JS/TS',
+        iconName: 'fa-js',
+      },
+    ];
+    technames.forEach((tech) => {
+      this.technologies.push({
+        name: tech.name,
+        iconName: tech.iconName,
+        class: 0,
+      });
+    });
+    this.technologies[this.index].class = 1;
+  },
+});
+</script>

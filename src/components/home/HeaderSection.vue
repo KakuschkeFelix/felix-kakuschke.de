@@ -20,7 +20,8 @@
     color: $light;
     margin: 0;
     opacity: 0.5;
-    padding-left: 9rem;
+    padding-left: 5rem;
+    transform: translateX(0.4rem);
 }
 
 .pretitle {
