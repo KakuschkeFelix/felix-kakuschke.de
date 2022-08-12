@@ -50,6 +50,7 @@
 </style>
 <script lang="ts">
 import { defineComponent } from 'vue';
+import technologies from '@/assets/config/abilities.json';
 
 interface Technology {
   name: string;
@@ -92,52 +93,7 @@ export default defineComponent({
   },
   mounted() {
     this.rotateIcons();
-    const technames = [
-      {
-        name: 'Angular',
-        iconName: 'fa-angular',
-      },
-      {
-        name: 'VueJS',
-        iconName: 'fa-vuejs',
-      },
-      {
-        name: 'Laravel',
-        iconName: 'fa-laravel',
-      },
-      {
-        name: 'Docker',
-        iconName: 'fa-docker',
-      },
-      {
-        name: 'Python',
-        iconName: 'fa-python',
-      },
-      {
-        name: 'Go/Golang',
-        iconName: 'fa-golang',
-      },
-      {
-        name: 'Node',
-        iconName: 'fa-node-js',
-      },
-      {
-        name: 'CSS',
-        iconName: 'fa-css3',
-      },
-      {
-        name: 'Sass/SCSS',
-        iconName: 'fa-sass',
-      },
-      {
-        name: 'HTML',
-        iconName: 'fa-html5',
-      },
-      {
-        name: 'JS/TS',
-        iconName: 'fa-js',
-      },
-    ];
+    const technames = technologies;
     technames.forEach((tech) => {
       this.technologies.push({
         name: tech.name,

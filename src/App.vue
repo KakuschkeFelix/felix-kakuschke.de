@@ -23,12 +23,12 @@
     <div class="home-content">
       <HomeContent></HomeContent>
     </div>
-    <div class="abilities-content">
-      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-      <br><br><br><br><br><br><br><br><br>
+    <div class="about-me-content">
+      <AboutMeContent></AboutMeContent>
     </div>
+    <!-- <div class="abilities-content">
+      <AbilitiesContent></AbilitiesContent>
+    </div> -->
   </div>
 </div>
 </template>
@@ -37,12 +37,16 @@
 import { defineComponent } from 'vue';
 import HomeContent from '@/components/home/HomeContent.vue';
 import NavBar from './components/NavBar.vue';
+// import AbilitiesContent from './components/abilities/AbilitiesContent.vue';
+import AboutMeContent from './components/aboutme/AboutMeContent.vue';
 
 export default defineComponent({
   name: 'App',
   components: {
     NavBar,
     HomeContent,
+    AboutMeContent,
+    // AbilitiesContent,
   },
 });
 </script>
@@ -98,6 +102,7 @@ export default defineComponent({
 
   .home-content {
     margin-top: 10rem;
+    margin-bottom: 20rem;
   }
 
 </style>
