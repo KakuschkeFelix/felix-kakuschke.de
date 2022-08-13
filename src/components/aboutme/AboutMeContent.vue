@@ -1,14 +1,14 @@
 <template>
-  <div class="about-me-header">
+  <div class="about-me-header" id="about_me">
     <p class="title">About Me</p>
   </div>
   <div class="about-me-card">
     <div class="card-image">
-      <!-- <img src="@/assets/images/fk.png" alt="Felix Kakuschke"> -->
+      <img src="@/assets/images/fk.jpg" alt="Felix Kakuschke">
     </div>
     <div class="card-text">
       <p class="title">Hi! My name is Felix Kakuschke</p>
-      <p class="card-content">I am a Software Engineer and Full Stack
+      <p class="card-content">I am a Software Engineer, Full Stack
         Web Developer and student in Media Coputer Science.
         I started learning to code when I was 13 and haven't stopped learning since.
         <br>
@@ -22,20 +22,32 @@
 </template>
 <style lang="scss" scoped>
   .about-me-header {
+    scroll-padding: 3rem;
     .title {
       font-size: 3rem;
+      color: $brand;
     }
   }
     .about-me-card {
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
+      align-items: center;
+      align-content: center;
+      .card-image {
+        height: 25rem;
+        margin-right: 3rem;
+        img {
+          height: 100%;
+        }
+      }
       .title {
         font-size: 2rem;
       }
       .card-content {
         font-size: 1.5rem;
-        width: clamp(45ch, 50%, 75ch);
+        min-width: 45ch;
+        max-width: 75ch;
         }
     }
 </style>

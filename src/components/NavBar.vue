@@ -1,6 +1,6 @@
 <template>
     <div class="nav-section">
-        <a href="About Me" class="link">About Me</a>
+        <a href="#about_me" class="link">About Me</a>
         <a href="Abilities" class="link">Abilities</a>
         <a href="Experience" class="link">Experience</a>
         <a href="Contact" class="link">Contact</a>
@@ -13,5 +13,6 @@
         flex-direction: row;
         flex-wrap: nowrap;
         justify-content: flex-end;
+        background-color: $dark;
     }
 </style>

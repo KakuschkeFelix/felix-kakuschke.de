@@ -56,6 +56,7 @@ export default defineComponent({
   nav {
     position: sticky;
     top: 0;
+    z-index: 1000;
   }
 }
 .page {  display: grid;
@@ -102,7 +103,12 @@ export default defineComponent({
 
   .home-content {
     margin-top: 10rem;
+    margin-bottom: 15rem;
+  }
+
+  .about-me-content {
     margin-bottom: 20rem;
+    margin-left: 20rem;
   }
 
 </style>

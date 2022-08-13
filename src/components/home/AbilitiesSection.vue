@@ -22,9 +22,10 @@
 
 }
     .icon {
-        transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+        transition: all 0.5s ease-out;
         font-size: 8rem;
         padding: 1rem;
+        color: $light;
         img {
           width: 8rem;
           height: 8rem;
@@ -51,7 +52,7 @@
         }
         &.reveal {
           transform: scale(1.2);
-            opacity: 1;
+          opacity: 1;
         }
     }
 </style>
@@ -93,7 +94,7 @@ export default defineComponent({
             this.mod(this.index + i, this.technologies.length)
           ].class = 2;
         }
-      }, 1500);
+      }, 3000);
     },
     mod(n: number, m: number) {
       return ((n % m) + m) % m;
