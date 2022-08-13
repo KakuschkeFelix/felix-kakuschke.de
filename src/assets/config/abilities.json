@@ -12,6 +12,10 @@
       "iconName": "fa-laravel"
     },
     {
+      "name": "Redux",
+      "customImage": "./assets/redux.svg"
+    },
+    {
       "name": "Docker",
       "iconName": "fa-docker"
     },

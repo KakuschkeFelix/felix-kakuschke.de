@@ -6,7 +6,9 @@
             :class="tech.class == 0 ? 'start' :
              tech.class == 1 ? 'reveal' :
               tech.class == 2 ? 'end' : ''">
-                <font-awesome-icon :icon="`fa-brands ${tech.iconName}`" /><p>{{ tech.name }}</p>
+              <img :src="tech.customImage" :alt="tech.name" v-if="tech.customImage">
+                <font-awesome-icon v-if="tech.iconName" :icon="`fa-brands ${tech.iconName}`" />
+                <p>{{ tech.name }}</p>
             </div>
             <div class="scrollbar"></div>
         </div>
@@ -17,11 +19,16 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+
 }
     .icon {
         transition: transform 0.5s ease-out, opacity 0.5s ease-out;
         font-size: 8rem;
         padding: 1rem;
+        img {
+          width: 8rem;
+          height: 8rem;
+        }
         p {
             font-size: 1.5rem;
             text-align: center;
@@ -54,8 +61,9 @@ import technologies from '@/assets/config/abilities.json';
 
 interface Technology {
   name: string;
-  iconName: string;
+  iconName?: string;
   class: number;
+  customImage?: string;
 }
 
 export default defineComponent({
@@ -98,6 +106,7 @@ export default defineComponent({
       this.technologies.push({
         name: tech.name,
         iconName: tech.iconName,
+        customImage: tech.customImage,
         class: 0,
       });
     });
