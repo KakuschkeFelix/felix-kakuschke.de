@@ -66,8 +66,6 @@ export default defineComponent({
         const { top } = el.getBoundingClientRect();
         if (top < height - revealOnce) {
           el.classList.add('show');
-        } else {
-          el.classList.remove('show');
         }
       });
     },
