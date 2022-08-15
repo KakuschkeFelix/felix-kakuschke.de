@@ -26,9 +26,9 @@
     <div class="about-me-content fadeIn right">
       <AboutMeContent></AboutMeContent>
     </div>
-    <!-- <div class="abilities-content">
+    <div class="abilities-content">
       <AbilitiesContent></AbilitiesContent>
-    </div> -->
+    </div>
   </div>
 </div>
 </template>
@@ -37,7 +37,7 @@
 import { defineComponent } from 'vue';
 import HomeContent from '@/components/home/HomeContent.vue';
 import NavBar from './components/NavBar.vue';
-// import AbilitiesContent from './components/abilities/AbilitiesContent.vue';
+import AbilitiesContent from './components/abilities/AbilitiesContent.vue';
 import AboutMeContent from './components/aboutme/AboutMeContent.vue';
 
 export default defineComponent({
@@ -46,7 +46,7 @@ export default defineComponent({
     NavBar,
     HomeContent,
     AboutMeContent,
-    // AbilitiesContent,
+    AbilitiesContent,
   },
   mounted() {
     window.addEventListener('scroll', this.checkForShow);

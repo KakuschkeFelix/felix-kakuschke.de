@@ -1,6 +1,9 @@
 <template>
-  <div class="abilities-header">
+  <div class="abilities-header" id="abilities">
     <p class="title">Abilities</p>
+  </div>
+  <div class="abilities-section-content">
+    <p>WIP</p>
   </div>
 </template>
 <style lang="scss" scoped>
