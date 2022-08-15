@@ -23,7 +23,7 @@
     <div class="home-content">
       <HomeContent></HomeContent>
     </div>
-    <div class="about-me-content">
+    <div class="about-me-content fadeIn right">
       <AboutMeContent></AboutMeContent>
     </div>
     <!-- <div class="abilities-content">
@@ -47,6 +47,30 @@ export default defineComponent({
     HomeContent,
     AboutMeContent,
     // AbilitiesContent,
+  },
+  mounted() {
+    window.addEventListener('scroll', this.checkForShow);
+    this.checkForShow();
+  },
+  methods: {
+    checkForShow() {
+      const fadeIn: Element[] = [];
+      document.querySelectorAll('.fadeIn').forEach((el) => fadeIn.push(el));
+      if (fadeIn?.length === 0) {
+        return;
+      }
+      const height = window.innerHeight;
+      const revealOnce = 200;
+
+      fadeIn.forEach((el) => {
+        const { top } = el.getBoundingClientRect();
+        if (top < height - revealOnce) {
+          el.classList.add('show');
+        } else {
+          el.classList.remove('show');
+        }
+      });
+    },
   },
 });
 </script>

@@ -42,3 +42,19 @@ html { font-size: 12px;}
         background-color: $light;
     }
 }
+
+.fadeIn {
+    position: relative;
+    opacity: 0;
+    transition: all 0.5s ease-out;
+    &.right {
+        transform: translateX(-200px);
+    }
+    &.left {
+        transform: translateX(100px);
+    }
+    &.show {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
