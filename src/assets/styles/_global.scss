@@ -1,3 +1,13 @@
+@font-face {
+    font-family: 'Share Tech';
+    src: URL('@/assets/fonts/ShareTech-Regular.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-family: 'Major Mono Display';
+    src: URL('@/assets/fonts/MajorMonoDisplay-Regular.ttf') format('truetype');
+  }
+
 body {
     margin: 0;
     padding: 0;
