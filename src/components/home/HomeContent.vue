@@ -35,7 +35,7 @@ export default defineComponent({
   padding-left: 3rem;
   margin-bottom: 5rem;
     p {
-      width: clamp(45ch, 50%, 75ch);
+      width: clamp(40ch, 50%, 75ch);
       font-size: 2rem;
       text-align: justify;
       padding-left: 3rem;

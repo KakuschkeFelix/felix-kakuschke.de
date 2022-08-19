@@ -29,6 +29,9 @@
     <div class="projects-content fadeIn top">
       <ProjectsContent></ProjectsContent>
     </div>
+    <div class="experience-content fadeIn right">
+      <ExperienceContent></ExperienceContent>
+    </div>
   </div>
 </div>
 </template>
@@ -39,6 +42,7 @@ import HomeContent from '@/components/home/HomeContent.vue';
 import NavBar from './components/NavBar.vue';
 import AboutMeContent from './components/aboutme/AboutMeContent.vue';
 import ProjectsContent from './components/projects/ProjectsContent.vue';
+import ExperienceContent from './components/experience/ExperienceContent.vue';
 
 export default defineComponent({
   name: 'App',
@@ -47,6 +51,7 @@ export default defineComponent({
     HomeContent,
     AboutMeContent,
     ProjectsContent,
+    ExperienceContent,
   },
   mounted() {
     window.addEventListener('scroll', this.checkForShow);
@@ -126,6 +131,11 @@ export default defineComponent({
     margin-bottom: 20rem;
   }
 
+  .experience-content {
+    margin-left: 12rem;
+    margin-bottom: 20rem;
+  }
+
   @media only screen and (min-width: 600px) {
     nav {
       display: block !important;
@@ -154,6 +164,11 @@ export default defineComponent({
 .sidebar {
   grid-area: sidebar;
   }
+
+  .experience-content {
+    margin-left: 15rem;
+    margin-bottom: 20rem;
   }
+}
 
 </style>

@@ -93,7 +93,19 @@ ul {
     top: 5px; 
     width: 3px;
     height: 6px;
-    border: solid #f9dd94;
+    border: solid $accent;
     border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+
+  li.arrow::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 6px;
+    height: 5px;
+    width: 5px;
+    border: 1px solid $accent;
+    border-width: 2px 2px 0 0;
     transform: rotate(45deg);
   }

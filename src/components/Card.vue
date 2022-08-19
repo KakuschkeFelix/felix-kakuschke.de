@@ -2,11 +2,11 @@
 <template>
 <div class="card">
     <slot name="image"></slot>
-    <div class="content">
+    <div class="card-content">
         <div class="header">
             <h1><slot name="title"></slot></h1>
         </div>
-        <div class="body">
+        <div class="card-body">
             <p><slot name="content"></slot></p>
         </div>
     </div>
@@ -26,7 +26,7 @@
     transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     text-align: left;
     margin: 1rem;
-    margin-top: 3rem;
+    margin-top: 6rem;
     box-shadow: (4px 2px 3px rgba(0, 0, 0, 0.2));
     img {
         border-radius: 0.5rem;
@@ -36,6 +36,10 @@
         object-fit: cover;
         transition: transform 0.3s ease-in-out;
         box-shadow: (4px 2px 3px rgba(0, 0, 0, 0.4));;
+        &.contain {
+            object-fit: contain;
+            height: 100%;
+        }
     }
     &:hover {
         background-color: lighten($brand, 5%);
@@ -45,8 +49,9 @@
             transform: scale(1.05);
         }
     }
-    .content {
-        .body {
+    .card-content {
+        width: 100%;
+        .card-body {
             p {
                 overflow: hidden;
                 margin: 0;
