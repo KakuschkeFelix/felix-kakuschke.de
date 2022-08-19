@@ -26,8 +26,8 @@
     <div class="about-me-content fadeIn right">
       <AboutMeContent></AboutMeContent>
     </div>
-    <div class="abilities-content">
-      <AbilitiesContent></AbilitiesContent>
+    <div class="projects-content fadeIn top">
+      <ProjectsContent></ProjectsContent>
     </div>
   </div>
 </div>
@@ -37,8 +37,8 @@
 import { defineComponent } from 'vue';
 import HomeContent from '@/components/home/HomeContent.vue';
 import NavBar from './components/NavBar.vue';
-import AbilitiesContent from './components/abilities/AbilitiesContent.vue';
 import AboutMeContent from './components/aboutme/AboutMeContent.vue';
+import ProjectsContent from './components/projects/ProjectsContent.vue';
 
 export default defineComponent({
   name: 'App',
@@ -46,7 +46,7 @@ export default defineComponent({
     NavBar,
     HomeContent,
     AboutMeContent,
-    AbilitiesContent,
+    ProjectsContent,
   },
   mounted() {
     window.addEventListener('scroll', this.checkForShow);
@@ -79,22 +79,10 @@ export default defineComponent({
     position: sticky;
     top: 0;
     z-index: 1000;
+    display: none;
   }
 }
-.page {  display: grid;
-  grid-template-columns: 1fr 9fr;
-  grid-template-rows: 1fr;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas:
-    "sidebar content";
-  width: 99%;
-}
-
-.content { grid-area: content; }
-
 .sidebar {
-  grid-area: sidebar;
   position: fixed;
   bottom: 0;
   .icons {
@@ -124,13 +112,48 @@ export default defineComponent({
   }
 
   .home-content {
-    margin-top: 10rem;
     margin-bottom: 15rem;
+    margin-top: 5rem;
   }
 
   .about-me-content {
     margin-bottom: 20rem;
+    margin-left: 10rem;
+  }
+
+  .projects-content {
+    margin-left: 7rem;
+    margin-bottom: 20rem;
+  }
+
+  @media only screen and (min-width: 600px) {
+    nav {
+      display: block !important;
+    }
+    .home-content{
+      margin-top: 10rem;
+    }
+    .about-me-content {
     margin-left: 20rem;
+  }
+  .projects-content {
+    margin-left: 10rem;
+  }
+  .page {  display: grid;
+  grid-template-columns: 1fr 9fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "sidebar content";
+  width: 99%;
+}
+
+.content { grid-area: content; }
+
+.sidebar {
+  grid-area: sidebar;
+  }
   }
 
 </style>

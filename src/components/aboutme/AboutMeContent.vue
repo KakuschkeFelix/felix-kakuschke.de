@@ -22,7 +22,7 @@
 </template>
 <style lang="scss" scoped>
   .about-me-header {
-    scroll-padding: 3rem;
+    scroll-padding: 10rem;
     .title {
       font-size: 3rem;
       color: $brand;
@@ -44,10 +44,12 @@
       .title {
         font-size: 2rem;
       }
-      .card-content {
-        font-size: 1.5rem;
+      .card-text {
         min-width: 45ch;
         max-width: 75ch;
+        .card-content {
+          font-size: 1.5rem;
+        }
         }
     }
 </style>

@@ -28,22 +28,39 @@ export default defineComponent({
 <style lang="scss" scoped>
 
 .page-header {
-  padding-left: 5rem;
+  padding-left: 3rem;
   margin-bottom: 7.5rem;
 }
 .page-subheader {
-  padding-left: 5rem;
+  padding-left: 3rem;
   margin-bottom: 5rem;
     p {
       width: clamp(45ch, 50%, 75ch);
       font-size: 2rem;
       text-align: justify;
-      padding-left: 5rem;
+      padding-left: 3rem;
       transform: translateX(0.4rem);
     }
   }
 
   .page-abilities {
+    padding-left: 4rem;
+  }
+
+@media only screen and (min-width: 600px) {
+  .page-abilities {
     padding-left: 5rem;
   }
+  .page-subheader {
+  padding-left: 5rem;
+    p {
+      width: clamp(45ch, 50%, 75ch);
+      padding-left: 5rem;
+    }
+  }
+  .page-header {
+  padding-left: 5rem;
+}
+}
+
 </style>

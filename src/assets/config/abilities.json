@@ -16,10 +16,6 @@
       "customImage": "./assets/redux.svg"
     },
     {
-      "name": "Docker",
-      "iconName": "fa-docker"
-    },
-    {
       "name": "Python",
       "iconName": "fa-python"
     },
