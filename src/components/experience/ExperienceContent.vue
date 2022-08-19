@@ -59,6 +59,9 @@
     }
     .experience-cards {
       margin-top: 7rem;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
     }
   }
 </style>
